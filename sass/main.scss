@@ -1,0 +1,153 @@
+#header-headroom + .content-block:nth-child(2) {
+	padding: 140px 0 60px 0;
+}
+
+.banner{
+	width: 100%;
+	.main-nav {
+		border: 0;
+		height: 80px;
+		.navbar-toggle {
+			margin-right: 0;
+			margin-top: 0;
+			background: none;
+			position: absolute;
+			right: 20px;
+			top: 20px;
+			&:focus {
+				outline: none;
+			}
+			.icon-bar {
+
+				height: 3px;
+			}
+			&:hover .icon-bar {
+
+			}
+		}
+		.navbar-collapse{
+			background-color: #000;
+		}
+		.nav {
+			margin: 0;
+			@media screen and (min-width: 320px) {
+
+			}
+			.nav-item {
+				a {
+					text-transform: uppercase;
+					font-size: 15px;
+					color: inherit;
+					border-top:5px solid transparent;
+					&:hover {
+						background: none;
+						border-top:5px solid;
+					}
+					&:focus {
+						outline: none;
+						background: none;
+					}
+					&:active {
+						outline: none;
+						background: none;
+					}
+				}
+				&.active {
+					a {
+						color: inherit;
+						background: none;
+					}
+				}
+			}
+			.dropdown-menu {
+				border-radius: 4px;
+				background-clip: padding-box;
+				margin: 0;
+				border: none;
+				text-transform: none;
+				min-width: 180px;
+				&:before {
+					content: "";
+					display: block;
+					width: 0;
+					height: 0;
+					border-left: 10px solid transparent;
+					border-right: 10px solid transparent;
+					border-bottom: 10px solid ;
+					position: absolute;
+					right: 35px;
+					top: -10px;
+				}
+				a {
+					padding: 8px 20px;
+					opacity: 1;
+					&:hover {
+
+					}
+				}
+			}
+		}
+	}
+	.brand-img {
+		max-width: 150px;
+		padding: 2px;
+	}
+}
+.headroom {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	transition: all .2s ease-in-out;
+}
+.headroom--unpinned {
+	top: -100px;
+}
+.headroom--pinned {
+	top: 0;
+}
+@media(max-width: 767px) {
+	#header-headroom {
+		.brand-img {
+			float: none;
+			margin: 0 auto;
+			text-align: center;
+		}
+		.navbar-fixed-top {
+			position: relative;
+			.navbar-collapse {
+				max-height: inherit;
+			}
+		}
+		.navbar-collapse {
+			border-top: none;
+			//Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+			box-shadow: none;
+			width: 100%;
+			top: 80px;
+			position: absolute;
+			z-index: 999;
+			.nav {
+				margin: 0;
+			}
+		}
+		.main-nav .nav .dropdown-menu:before {
+			display: none;
+		}
+		.navbar-fixed-bottom .navbar-collapse {
+			max-height: inherit;
+		}
+	}
+}
+
+
+
+.nav .open > a {
+	background: none;
+	&:hover {
+		background: none;
+	}
+	&:focus {
+		background: none;
+	}
+}
